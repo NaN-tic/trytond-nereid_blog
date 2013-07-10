@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tryton>
+    <data>
+        <!-- Groups -->
+        <record model="res.group" id="group_nereid_blog">
+            <field name="name">Nereid Blog</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_nereid_blog">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_nereid_blog"/>
+        </record>
+
+        <!-- Icon -->
+        <record model="ir.ui.icon" id="nereid_blog_icon">
+            <field name="name">tryton-nereid-blog</field>
+            <field name="path">icons/tryton-nereid-blog.svg</field>
+        </record>
+
+        <!-- Menu Top -->
+        <menuitem name="Blog" id="menu_nereid_blog" sequence="3" icon="tryton-nereid-blog"/>
+        <record model="ir.ui.menu-res.group" id="menu_nereid_blog_group_nereid_blog">
+            <field name="menu" ref="menu_nereid_blog"/>
+            <field name="group" ref="group_nereid_blog"/>
+        </record>
+
+        <!-- nereid.blog.post -->
+        <record model="ir.ui.view" id="blog_post_view_form">
+            <field name="model">nereid.blog.post</field>
+            <field name="type">form</field>
+            <field name="name">post_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="blog_post_view_tree">
+            <field name="model">nereid.blog.post</field>
+            <field name="type">tree</field>
+            <field name="name">post_tree</field>
+        </record>
+
+        <!-- Actions / Menu -->
+        <record model="ir.action.act_window" id="act_blog_post_form">
+            <field name="name">Posts</field>
+            <field name="res_model">nereid.blog.post</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_blog_post_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="blog_post_view_tree"/>
+            <field name="act_window" ref="act_blog_post_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_blog_post_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="blog_post_view_form"/>
+            <field name="act_window" ref="act_blog_post_form"/>
+        </record>
+        <menuitem parent="menu_nereid_blog" action="act_blog_post_form"
+            id="menu_blog_post_form"/>
+
+        <!-- nereid.blog.category -->
+        <record model="ir.ui.view" id="blog_category_view_form">
+            <field name="model">nereid.blog.category</field>
+            <field name="type">form</field>
+            <field name="name">category_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="blog_category_view_tree">
+            <field name="model">nereid.blog.category</field>
+            <field name="type">tree</field>
+            <field name="name">category_tree</field>
+        </record>
+
+        <!-- Actions / Menu -->
+        <record model="ir.action.act_window" id="act_blog_category_form">
+            <field name="name">Categories</field>
+            <field name="res_model">nereid.blog.category</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_blog_category_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="blog_category_view_tree"/>
+            <field name="act_window" ref="act_blog_category_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_blog_category_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="blog_category_view_form"/>
+            <field name="act_window" ref="act_blog_category_form"/>
+        </record>
+        <menuitem parent="menu_nereid_blog" action="act_blog_category_form"
+            id="menu_blog_category_form"/>
+
+        <!-- Access -->
+        <record model="ir.model.access" id="access_nereid_blog_post">
+            <field name="model" search="[('model', '=', 'nereid.blog.post')]"/>
+            <field name="group" ref="group_nereid_blog"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_nereid_blog_category">
+            <field name="model" search="[('model', '=', 'nereid.blog.category')]"/>
+            <field name="group" ref="group_nereid_blog"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+    </data>
+</tryton>

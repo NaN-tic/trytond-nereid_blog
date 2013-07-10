@@ -1,0 +1,131 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:nereid.blog.category:"
+msgid ""
+"You can not delete categories because you will get error 404 NOT Found. "
+"Dissable active field."
+msgstr ""
+"No pot eliminar categories perque aconseguiria un error 404 NOT Found. "
+"Desactiva la opció \"estat\"."
+
+msgctxt "error:nereid.blog.post:"
+msgid ""
+"You can not delete posts because you will get error 404 NOT Found. Dissable "
+"active field."
+msgstr ""
+"No pot eliminar posts perque aconseguiria un error 404 NOT Found. Desactiva "
+"la opció \"estat\"."
+
+msgctxt "field:nereid.blog.category,status:"
+msgid "Status"
+msgstr "Estat"
+
+msgctxt "field:nereid.blog.post,images:"
+msgid "Images"
+msgstr "Imatges"
+
+msgctxt "field:nereid.blog.post,metadescription:"
+msgid "Meta Description"
+msgstr "Meta Description"
+
+msgctxt "field:nereid.blog.post,metakeyword:"
+msgid "Meta Keyword"
+msgstr "Meta Keyword"
+
+msgctxt "field:nereid.blog.post,metakeywords:"
+msgid "Meta Keywords"
+msgstr "Meta Keywords"
+
+msgctxt "field:nereid.blog.post,metatitle:"
+msgid "Meta Title"
+msgstr "Meta Title"
+
+msgctxt "field:nereid.blog.post,status:"
+msgid "Status"
+msgstr "Estat"
+
+msgctxt "field:nereid.blog.post-image,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:nereid.blog.post-image,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:nereid.blog.post-image,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:nereid.blog.post-image,image:"
+msgid "Image"
+msgstr "Imatges"
+
+msgctxt "field:nereid.blog.post-image,post:"
+msgid "Post"
+msgstr "Post"
+
+msgctxt "field:nereid.blog.post-image,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:nereid.blog.post-image,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:nereid.blog.post-image,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "help:nereid.blog.category,status:"
+msgid "Dissable to not show posts in this category"
+msgstr "Desactiva per no mostrar posts en aquesta categoria"
+
+msgctxt "help:nereid.blog.post,metadescription:"
+msgid ""
+"Almost all search engines recommend it to be shorter than 155 characters of "
+"plain text"
+msgstr ""
+"La majoria de cercadors recomanen una descripció breu de 155 caràcters de "
+"text pla."
+
+msgctxt "help:nereid.blog.post,metakeyword:"
+msgid "Separated by comma"
+msgstr "Separat per coma"
+
+msgctxt "help:nereid.blog.post,metakeywords:"
+msgid "Separated by comma"
+msgstr "Separat per coma"
+
+msgctxt "help:nereid.blog.post,status:"
+msgid "Dissable to not show content post"
+msgstr "Desactiva per no mostrar contingut del post"
+
+msgctxt "model:ir.action,name:act_blog_category_form"
+msgid "Categories"
+msgstr "Categories"
+
+msgctxt "model:ir.action,name:act_blog_post_form"
+msgid "Posts"
+msgstr "Posts"
+
+msgctxt "model:ir.ui.menu,name:menu_blog_category_form"
+msgid "Categories"
+msgstr "Categories"
+
+msgctxt "model:ir.ui.menu,name:menu_blog_post_form"
+msgid "Posts"
+msgstr "Posts"
+
+msgctxt "model:ir.ui.menu,name:menu_nereid_blog"
+msgid "Blog"
+msgstr "Blog"
+
+msgctxt "model:nereid.blog.post-image,name:"
+msgid "Nereid Blog Post - Image"
+msgstr "Nereid Blog Post - Image"
+
+msgctxt "model:res.group,name:group_nereid_blog"
+msgid "Nereid Blog"
+msgstr "Nereid Blog"
