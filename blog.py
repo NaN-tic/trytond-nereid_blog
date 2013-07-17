@@ -252,9 +252,6 @@ class Post(ModelSQL, ModelView):
             'nereid.blog.post.render', uri=self.uri, **kwargs
         )
 
-    @staticmethod
-    def keys():
-        return 'Que farem'
 
 class PostCategory(ModelSQL):
     'Nereid Blog Post - Category'
