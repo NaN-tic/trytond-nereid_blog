@@ -7,5 +7,5 @@ this repository contains the full copyright notices and license terms. -->
     <field name="author"/>
     <field name="published_on"/>
     <field name="status"/>
-    <field name="categories"/>
+    <field name="categories" tree_invisible="1"/>
 </tree>
