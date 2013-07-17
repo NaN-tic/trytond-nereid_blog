@@ -25,7 +25,7 @@ class Category(ModelSQL, ModelView):
 
     per_page = 10
 
-    title = fields.Char('Title', size=100, translate=True,
+    title = fields.Char('Title', translate=True,
         required=True, on_change=['title', 'uri'])
     uri = fields.Char('URI', required=True,
         help='Unique Name is used as the uri.')
@@ -150,7 +150,7 @@ class Post(ModelSQL, ModelView):
     __name__ = 'nereid.blog.post'
     _rec_name = 'uri'
     _order_name = 'published_on'
-    title = fields.Char('Title', size=100, translate=True,
+    title = fields.Char('Title', translate=True,
         required=True, on_change=['title', 'uri'])
     uri = fields.Char('URI', required=True,
         help='Unique Name is used as the uri.')
