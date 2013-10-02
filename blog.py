@@ -1,16 +1,11 @@
 #This file is part nereid_blog module for Tryton.
 #The COPYRIGHT file at the top level of this repository contains 
 #the full copyright notices and license terms.
-
-from string import Template
-
-from nereid import render_template, current_app, cache, request
-from nereid.helpers import slugify, url_for, key_from_list
+from nereid import render_template, request
+from nereid.helpers import slugify, url_for
 from nereid.contrib.pagination import Pagination
-from nereid.contrib.sitemap import SitemapIndex, SitemapSection
-from werkzeug.exceptions import NotFound, InternalServerError
+from werkzeug.exceptions import NotFound
 
-from trytond.pyson import Eval, Not, Equal, Bool, In
 from trytond.model import ModelSQL, ModelView, fields
 from trytond.transaction import Transaction
 from trytond.pool import Pool
