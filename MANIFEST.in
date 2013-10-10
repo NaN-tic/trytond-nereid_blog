@@ -11,3 +11,4 @@ include locale/*.po
 include doc/*
 include tests/*.rst
 include icons/*
+include templates/*.jinja
