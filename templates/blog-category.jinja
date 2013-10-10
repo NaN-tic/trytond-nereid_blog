@@ -2,6 +2,7 @@
 {% from '_helpers.jinja' import render_pagination with context %}
 
 {% block head %}<link href="{{ STATIC }}{{ config['TEMPLATE'] }}/css/blog.css" rel="stylesheet" type="text/css">{% endblock %}
+{% block title %}{{ _('Blog') }} - {{ category.title }}. {{ _('Page') }} {{ posts.page }}{% endblock %}
 {% block metadescription %}{{ _('Blog') }} - {{ category.title }}. {{ _('Page') }} {{ posts.page }}{% endblock %}
 
 {% block main %}
