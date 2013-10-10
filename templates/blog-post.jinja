@@ -1,0 +1,34 @@
+{% extends 'base.jinja' %}
+{% from '_helpers.jinja' import render_keywords with context %}
+
+{% block head %}<link href="{{ STATIC }}{{ config['TEMPLATE'] }}/css/blog.css" rel="stylesheet" type="text/css">{% endblock %}
+{% block metadescription %}{% if post.metadescription %}{{ post.metadescription }}{% else %}{{ _('Blog')}} {{ post.title }}{% endif %}{% endblock %}
+{% block metakeywords %}{% if post.metakeywords %}{{ post.metakeywords }}{% endif %}{% endblock %}
+{% block metatitle %}{% if post.metatitle %}{{ post.metatitle }}{% else %}{{ post.title }}{% endif %}{% endblock %}
+{% block canonical %}{{ url_for('nereid.blog.post.render', uri=post.uri) }}{% endblock %}
+
+{% block main %}
+{% include 'nav.jinja' %}
+<div class="row">
+    <div class="span12 post">
+        <h2>{{ post.title }}</h2>
+        <div class="entry-meta">
+            {% if post.categories %}{{ _('In')}} {% for category in post.categories %}<a href="{{ url_for('nereid.blog.category.render', uri=category.uri) }}">{{ category.title }}</a> {% endfor %}{% endif %}
+            {{ _('on') }} {{ post.published_on|dateformat }} 
+            {{ _('by') }} {% if post.author %}{{ post.author }}{% else %}{{ post.create_uid.name }}{% endif %}
+        </div>
+        <hr/>
+        <div id="post">
+            {% if post.status %}{{ post.description|safe|nl2br }}{% else %}<span class="alert">{{ _('Content this post is dissabled') }}</span>{% endif %}
+        </div>
+        {% if post.metakeywords %}<div id="keys">
+            <small>{{ _('Tags') }}: {% for key in post.metakeywords|keys() %}
+                <a href="{{ url_for('nereid.blog.category.tag', uri=key) }}" alt="{{ key }}">{{ key }}</a>{% endfor %}</small>
+        </div>{% endif %}
+    </div>
+    {% if post.images %}<div class="span12 imagebox">
+        {% include 'blog-post-images.jinja' %}
+    </div>
+</div>{% endif %}
+
+{% endblock %}

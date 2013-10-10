@@ -1,0 +1,11 @@
+<div class=" item">
+    <ul class="thumbnails">{% set count = 0 %}{% for image in post.images %}
+        <li class="span3">
+            <div class="thumbnail">
+                <a href="{{ url_for('nereid.static.file.send_static_file', folder=image.folder.folder_name, name=image.name) }}" alt="{{post.title}}">
+                    <img src="{{ url_for('nereid.static.file.send_static_file', folder=image.folder.folder_name, name=image.name) }}" alt="{{post.title}}"/>
+                </a>
+            </div>
+        </li>
+    {% endfor %}</ul>
+</div>

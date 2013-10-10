@@ -1,0 +1,29 @@
+{% extends 'base.jinja' %}
+{% from '_helpers.jinja' import render_pagination with context %}
+
+{% block head %}<link href="{{ STATIC }}{{ config['TEMPLATE'] }}/css/blog.css" rel="stylesheet" type="text/css">{% endblock %}
+{% block metadescription %}{{ _('Blog') }} - {{ category.title }}. {{ _('Page') }} {{ posts.page }}{% endblock %}
+
+{% block main %}
+{% include 'nav.jinja' %}
+<div class="row">
+    <div class="span12 page-header">
+        <h1>{{ category.title }}</h1>{% if category.description %}<p><small>{{ category.description }}</small></p>{% endif %}
+    </div>
+    <div class="span12">
+        {% if posts %}
+            {% for post in posts %}<div class="postbox">
+                <h2><a href="{{ url_for('nereid.blog.post.render', uri=post.uri) }}" alt="{{ post.title }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                {{ _('On') }} {{ post.published_on|dateformat }} {{ _('by') }} {% if post.author %}{{ post.author }}{% else %}{{ post.create_uid.name }}{% endif %}
+                <hr/>
+                <div class="post-description">{{ post.description|safe|truncate(1000, True) }}</div>
+            </div>{% endfor %}
+            {% if posts.pages > 1 %}{{ render_pagination(posts, category.uri, 'nereid.blog.category.render') }}{% endif %}
+        {% else %}
+            <div class="alert">{{ _('Posts in this category is dissabled or empty') }}.</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+
