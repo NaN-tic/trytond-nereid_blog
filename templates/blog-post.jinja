@@ -9,6 +9,7 @@
 {% block canonical %}{{ url_for('nereid.blog.post.render', uri=post.uri) }}{% endblock %}
 
 {% block main %}
+{% set bread_crumbs = [(url_for('nereid.website.home'), _('Home')), (url_for('nereid.blog.category.all'), _('Blog')), (url_for('nereid.blog.post.render', uri=post.uri), post.title)] %}
 {% include 'nav.jinja' %}
 <div class="row">
     <div class="span12 post">

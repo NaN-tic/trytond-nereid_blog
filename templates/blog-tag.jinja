@@ -6,6 +6,7 @@
 {% block metadescription %}{{ _('Blog') }} - {{ tag }}. {{ _('Page') }} {{ posts.page }}{% endblock %}
 
 {% block main %}
+{% set bread_crumbs = [(url_for('nereid.website.home'), _('Home')), (url_for('nereid.blog.category.all'), _('Blog')), (url_for('nereid.blog.category.tag', uri=tag), _('Tag')), ('', tag)] %}
 {% include 'nav.jinja' %}
 <div class="row">
     <div class="span12 page-header">
