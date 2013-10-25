@@ -2,3 +2,5 @@
 # copyright notices and license terms.
 
 from .test_nereid_blog import suite
+
+__all__ = ['suite']
