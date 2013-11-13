@@ -2,25 +2,25 @@
 <tryton>
     <data >
         <record id="blog_post_uri" model="nereid.url_rule">
-            <field name="rule">/&lt;language&gt;/blog/post/&lt;uri&gt;</field>
+            <field name="rule">/blog/post/&lt;uri&gt;</field>
             <field name="endpoint">nereid.blog.post.render</field>
             <field name="sequence" eval="10" />
             <field name="url_map" ref="nereid.default_url_map" />
         </record>
         <record id="blog_category" model="nereid.url_rule">
-            <field name="rule">/&lt;language&gt;/blog/</field>
+            <field name="rule">/blog/</field>
             <field name="endpoint">nereid.blog.category.all</field>
             <field name="sequence" eval="10" />
             <field name="url_map" ref="nereid.default_url_map" />
         </record>
         <record id="blog_category_uri" model="nereid.url_rule">
-            <field name="rule">/&lt;language&gt;/blog/&lt;uri&gt;</field>
+            <field name="rule">/blog/&lt;uri&gt;</field>
             <field name="endpoint">nereid.blog.category.render</field>
             <field name="sequence" eval="20" />
             <field name="url_map" ref="nereid.default_url_map" />
         </record>
         <record id="blog_category_tag" model="nereid.url_rule">
-            <field name="rule">/&lt;language&gt;/blog/tag/&lt;uri&gt;</field>
+            <field name="rule">/blog/tag/&lt;uri&gt;</field>
             <field name="endpoint">nereid.blog.category.tag</field>
             <field name="sequence" eval="30" />
             <field name="url_map" ref="nereid.default_url_map" />
